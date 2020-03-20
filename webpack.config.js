@@ -3,10 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
-  devtool: "inline-source-map",
-  resolve: {
-    extensions: [".js"]
-  },
   output: {
     path: path.join(__dirname, "/docs"),
     filename: "bundle.js"
@@ -19,11 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -32,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: "svg-sprite-loader"
+        loader: "svg-inline-loader"
       }
     ]
   },
