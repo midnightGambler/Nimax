@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../../styles/GlobalStyles";
 import { colors } from "../../styles/variables";
 import { StyledSearchCard } from "./styled";
