@@ -5,7 +5,7 @@ export const SearchList = ({ items }) => {
   return (
     <StyledList>
       {items.map(item => (
-        <StyledListItem dangerouslySetInnerHTML={{ __html: item }} />
+        <StyledListItem key={item} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </StyledList>
   );
