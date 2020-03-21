@@ -23,5 +23,6 @@ ul {
 
 #app {
   height: 100vh;
+  padding-top: 25vh;
 }
 `;

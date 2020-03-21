@@ -10,5 +10,9 @@ export const StyledInputWrapper = styled.div`
   ${Input} {
     flex: 1;
     padding-left: 10px;
+    &::placeholder {
+      color: ${({ theme }) => theme.textSecondary};
+      padding-left: 0.5rem;
+    }
   }
 `;

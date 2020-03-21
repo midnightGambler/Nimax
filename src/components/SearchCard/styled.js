@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import { IconButton } from "../IconButtton/IconButton";
 
+const rotate = `
+  transform: rotate(180deg);
+`;
+
 export const StyledSearchCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  position: absolute;
-  width: 21rem;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 export const StyledChevronIcon = styled(IconButton)`
   width: 2.75rem;
+  svg {
+    transition: 0.2s transform ease-in;
+    ${({ isOpen }) => (isOpen ? rotate : "")}
+  }
 `;
 
-export const StyledCloseIcon = styled(StyledChevronIcon)`
+export const StyledCloseIcon = styled(IconButton)`
+  width: 2.75rem;
   svg {
     transform: rotate(45deg);
   }
