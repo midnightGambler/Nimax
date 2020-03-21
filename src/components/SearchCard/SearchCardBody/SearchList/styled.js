@@ -8,6 +8,7 @@ export const StyledList = styled.ul`
 
 export const StyledListItem = styled.li`
   padding: 1rem 3rem;
+  line-height: 18px;
   .text-offset {
     color: ${({ theme }) => theme.textHint};
   }
