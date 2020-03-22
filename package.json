@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://midnightgambler.github.io/nimax/",
+  "homepage": "https://midnightgambler.github.io/Nimax/",
   "scripts": {
     "start:dev": "webpack-dev-server --mode development",
     "build:prod": "webpack --mode production"
