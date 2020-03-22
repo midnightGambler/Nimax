@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   StyledSearchCard,
   StyledChevronIcon,
@@ -8,23 +8,19 @@ import { SearchCardHeader } from "./SearchCardHeader/SearchCardHeader";
 import { SearchCardBody } from "./SearchCardBody/SearchCardBody";
 import { SearchCardHeaderInput } from "./SearchCardHeader/SearchCardHeaderInput/SearchCardHeaderInput";
 import { SearchList } from "./SearchCardBody/SearchList/SearchList";
-import { IconButton } from "../IconButtton/IconButton";
 import searchIcon from "../../svg/search.svg";
 import closeIcon from "../../svg/close.svg";
 import chevronIcon from "../../svg/chevron.svg";
 import { SearchCardInfo } from "./SearchCardBody/SearchCardInfo/SearchCardInfo";
 import { Logo } from "../Logo/Logo";
 import { searchItems } from "../../fixtures/searchItems";
+import { useSearch } from "../../hooks/useSearch";
 
 export const SearchCard = ({ className }) => {
   const [isOpen, toggle] = useState(false);
   const [isSearchActive, toggleSearch] = useState(false);
   const [query, setQuery] = useState("");
-  const [items, setListItems] = useState([]);
-
-  useEffect(() => {
-    handleSearch();
-  }, [query]);
+  const items = useSearch(query, searchItems);
 
   const onChange = e => {
     if (/^[a-zA-Z-" "]+$/.test(e.target.value) || e.target.value === "") {
@@ -40,26 +36,6 @@ export const SearchCard = ({ className }) => {
   const handleCloseBtn = () => {
     toggleSearch(false);
     setQuery("");
-  };
-
-  const handleSearch = () => {
-    const listItems = [];
-    const lowCaseQuery = query.toLowerCase();
-
-    Object.keys(searchItems).map(country =>
-      searchItems[country].forEach(city => {
-        if (city.toLowerCase().startsWith(lowCaseQuery)) {
-          const markedCity = city.replace(
-            new RegExp(lowCaseQuery, "i"),
-            match => `<b>${match}</b>`
-          );
-          listItems.push(
-            `${markedCity}, <span class='text-offset'>${country}</span>`
-          );
-        }
-      })
-    );
-    setListItems(listItems);
   };
 
   return (
