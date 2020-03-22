@@ -15,7 +15,7 @@ export const StyledInputWrapper = styled.div`
     background-repeat: no-repeat;
     &::placeholder {
       color: ${({ theme }) => theme.textSecondary};
-      padding-left: 0.5rem;
+      /* padding-left: 0.5rem; */
     }
   }
 `;
