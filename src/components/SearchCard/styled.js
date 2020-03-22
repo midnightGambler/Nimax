@@ -21,7 +21,4 @@ export const StyledChevronIcon = styled(IconButton)`
 
 export const StyledCloseIcon = styled(IconButton)`
   width: 2.75rem;
-  svg {
-    transform: rotate(45deg);
-  }
 `;

@@ -6,7 +6,7 @@ import { SearchCardHeaderInput } from "./SearchCardHeader/SearchCardHeaderInput/
 import { SearchList } from "./SearchCardBody/SearchList/SearchList";
 import { IconButton } from "../IconButtton/IconButton";
 import searchIcon from "../../svg/search.svg";
-import plusIcon from "../../svg/plus.svg";
+import closeIcon from "../../svg/close.svg";
 import chevronIcon from "../../svg/chevron.svg";
 import { SearchCardInfo } from "./SearchCardBody/SearchCardInfo/SearchCardInfo";
 import { Logo } from "../Logo/Logo";
@@ -80,7 +80,7 @@ export const SearchCard = ({ className }) => {
             onClick={handleCloseBtn}
             withBorder
             width="14px"
-            src={plusIcon}
+            src={closeIcon}
           />
         )}
       </SearchCardHeader>
