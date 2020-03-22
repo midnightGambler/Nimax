@@ -20,7 +20,3 @@ export const StyledChevronIcon = styled(StyledIconButton)`
     ${({ isOpen }) => (isOpen ? rotate : "")}
   }
 `;
-
-export const StyledCloseIcon = styled(IconButton)`
-  width: 2.75rem;
-`;
