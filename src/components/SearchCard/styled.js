@@ -10,9 +10,11 @@ export const StyledSearchCard = styled.div`
   flex-direction: column;
   align-items: stretch;
 `;
-
-export const StyledChevronIcon = styled(IconButton)`
-  width: 2.75rem;
+export const StyledIconButton = styled(IconButton)`
+  padding: 0;
+  flex: 0 0 12.5%;
+`;
+export const StyledChevronIcon = styled(StyledIconButton)`
   svg {
     transition: 0.2s transform ease-in;
     ${({ isOpen }) => (isOpen ? rotate : "")}

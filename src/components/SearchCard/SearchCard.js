@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { StyledSearchCard, StyledCloseIcon, StyledChevronIcon } from "./styled";
+import {
+  StyledSearchCard,
+  StyledCloseIcon,
+  StyledChevronIcon,
+  StyledIconButton
+} from "./styled";
 import { SearchCardHeader } from "./SearchCardHeader/SearchCardHeader";
 import { SearchCardBody } from "./SearchCardBody/SearchCardBody";
 import { SearchCardHeaderInput } from "./SearchCardHeader/SearchCardHeaderInput/SearchCardHeaderInput";
@@ -65,7 +70,11 @@ export const SearchCard = ({ className }) => {
           <SearchCardHeaderInput value={query} onChange={onChange} />
         )}
         {!isSearchActive && <Logo />}
-        <IconButton onClick={handleSearchBtn} width="16px" src={searchIcon} />
+        <StyledIconButton
+          onClick={handleSearchBtn}
+          width="16px"
+          src={searchIcon}
+        />
         {!isSearchActive && (
           <StyledChevronIcon
             isOpen={isOpen}
@@ -76,10 +85,10 @@ export const SearchCard = ({ className }) => {
           />
         )}
         {isSearchActive && (
-          <StyledCloseIcon
+          <StyledIconButton
             onClick={handleCloseBtn}
             withBorder
-            width="14px"
+            width="11px"
             src={closeIcon}
           />
         )}
